@@ -23,12 +23,11 @@ body{
 }
 
 .card{
-    position: relative;
+	overflow: hidden;
     width: 400px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     backdrop-filter: blur(10px);
     background-color: #2d3436;
     background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
@@ -69,7 +68,7 @@ body{
 
 .hamburger-menu{
     position: absolute;
-    width: 21px;
+    width: 11px;
     height: 16px;
     top: 1.4rem;
     left: 1.9rem;
@@ -111,6 +110,7 @@ body{
 }
 
 .sidebar {
+	background-color: #0005;
     position: absolute;
     top: 50px;
     left: 15px;
@@ -126,17 +126,16 @@ body{
 .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
+    color: #fff;
     justify-content: center;
     display: flex;
     font-family: 'Poppins', sans-serif;
     transition: .3s;
-    color: #fff;
 }
 
 .sidebar a:hover {
     transform: scale(1.2);
 }
-
 
 .main{
     position: absolute;
@@ -473,3 +472,29 @@ body{
         font-size: .6rem;
     }
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; 
+        display: none;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+        z-index: 1000;
+    }
+  }
+
+@keyframes fadeOut {
+    0% { 
+        opacity: 1; 
+        display: block;
+    }
+    100% { 
+        opacity: 0; 
+        display: none;
+        z-index: 0;
+    }
+  }
+
+    
