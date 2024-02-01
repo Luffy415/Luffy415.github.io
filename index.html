@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cf.css">
     <title>Profile Card</title>
@@ -21,87 +19,69 @@
     </div>
 
     <div class="container">
-        <input type="checkbox" id="check">
         <div class="card">
-            <div class="sidebar" id="sidebar">
+            <div class="sidebar" id="sidebar" onclick="toogle()">
                 <a href="https://github.com/luffy415" target="_blank" class="active">Github</a>
                 <a href="https://sadlyf0_0.t.me" target="_blank" class="active">Telegram</a>
                 <a href="https://instagram.com/5_sano_manjiro_5" target="_blank" class="active">Insta</a>
             </div>
-            <div class="header" onclick="toogle()">
+            <div class="header">
                 <label for="check" class="checkbtn" id="chkbtn">
-                <div class="hamburger-menu">
-                    <div class="center"></div>
-                </div>
-                <a href="#" class="mail">
-                    <i class="far fa-envelope"></i>
-                </a>
-                <div class="main">
-                    <div class="image">
-                        <div class="hover">
-                            <i class="fas fa-camera fa-2x"></i>
-                        </div>
+                    <div class="hamburger-menu" onclick="toogle()">
+                        <div class="center"></div>
                     </div>
-                    <h3 class="name">Shaurya</h3>
-                    <h3 class="sub-name">@sadlyf0_0</h3>
-                </div>
+                    <a href="#" class="mail">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <div class="main">
+                        <div class="image">
+                            <div class="hover">
+                                <i class="fas fa-camera fa-2x"></i>
+                            </div>
+                        </div>
+                        <h3 class="name">Shaurya</h3>
+                        <h3 class="sub-name">@sadlyf0_0</h3>
+                    </div>
+                </label>
             </div>
 
             <div class="content">
                 <div class="left">
                     <div class="about-container">
                         <h3 class="title">About</h3>
-                        <p class="text">~ Coder? ~ <br>An average coder kid</p>
+                        <p class="text">~ Coder ~ <br>An average coder</p>
                     </div>
-                    <div class="icons-container"> <a href="https://github.com/luffy415" class="icon" target="_blank"> <i class="fab fa-github"></i> </a> <a
-                            href="https://instagram.com/_luffy415_" class="icon" target="_blank"> <i class="fab fa-instagram"></i> </a> <a href="https://t.me/sadlyf0_0" class="icon" target="_blank"> <i
-                                class="fab fa-telegram"></i> </a> </div>
+                    <div class="icons-container">
+                        <a href="https://github.com/luffy415" class="icon" target="_blank"> <i class="fab fa-github"></i> </a>
+                        <a href="https://instagram.com/_luffy415_" class="icon" target="_blank"> <i class="fab fa-instagram"></i> </a>
+                        <a href="https://t.me/sadlyf0_0" class="icon" target="_blank"> <i class="fab fa-telegram"></i> </a>
+                    </div>
                     <div class="buttons-wrap">
                         <div class="follow-wrap"> <a href="https://instagram.com/_luffy415_" class="follow" target="_blank">Follow</a> </div>
                         <div class="share-wrap"> <a href="#" class="share">More</a> </div>
                     </div>
                 </div>
             </div>
+
+            <div class="form-container">
+                <h3>Contact me</h3>
+                <form action="#contact">
+                        <input class="form-input" type="text" placeholder="Name" id="name" />
+                        <input class="form-input" type="text" id="email" pattern='^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$' placeholder="Email"/>
+                        <textarea class="form-input" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                    <button type="submit" onclick="cfSubmitMessage()" id="submit" class="submit">Send</button>
+                </form>
+            </div>
         </div>
-        <div class="floating-contact-form">
-      <div class="form-container">
-        <h3>Contact Me</h3>
-
-        <form action="#contact">
-          <div class="field-container">
-            <i class="fas fa-signature"></i>
-            <label for="name">Name</label>
-            <input class="form-input" type="text" id="name" />
-          </div>
-
-          <div class="field-container">
-            <i class="fas fa-envelope"></i>
-            <label for="email">Email</label>
-            <input class="form-input" type="text" id="email" pattern='^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$' />
-          </div>
-
-          <div class="field-container">
-            <i class="far fa-sticky-note"></i>
-            <label for="message">Message</label>
-            <textarea
-              class="form-input"
-              id="message"
-              cols="30"
-              rows="10"
-            ></textarea>
-          </div>
-
-          <button type="submit" onclick="cfSubmitMessage()" id="submit" class="submit">Send</button>
-
-        </form>
-      </div>
-
-      <div class="contact-icon">
-        <i class="fas fa-comments"></i>
-      </div>
     </div>
+    <div class="contact-icon">
+    	<span class="up"><i class='fas fa-arrow-down'></i></span>
+        <span class="comment"><i class="fas fa-comment-alt"></i></span>
     </div>
+
     <script src="app.js"></script>
     <script src="cf.js"></script>
 </body>
-</html>
+
+    </html>
+                    
