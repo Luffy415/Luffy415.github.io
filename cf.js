@@ -1,23 +1,33 @@
+let active = false
 const formInputs = document.querySelectorAll(
-  ".floating-contact-form .form-container .form-input"
+  ".form-input"
 );
+
+const up = document.querySelector(".contact-icon .up")
 
 const contactIcon = document.querySelector(
-  ".floating-contact-form .contact-icon"
+  ".contact-icon"
 );
 
+const comment = document.querySelector(".comment")
+
 const formContainer = document.querySelector(
-  ".floating-contact-form .form-container"
+  ".form-container"
 );
 
 contactIcon.addEventListener("click", () => {
-  formContainer.classList.toggle("active");
-});
-
-formInputs.forEach((i) => {
-  i.addEventListener("focus", () => {
-    i.previousElementSibling.classList.add("active");
-  });
+	if(!active){
+     active = true
+     formContainer.style.bottom = "0"
+     up.style.bottom = "0"
+     comment.style.bottom = "-100%"
+  }
+  else {
+     active = false
+     formContainer.style.bottom = "-150%"
+     up.style.bottom = "-100%"
+     comment.style.bottom = "0"
+  }
 });
 
 formInputs.forEach((i) => {
