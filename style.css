@@ -161,14 +161,22 @@ body{
     position: absolute;
     top: 50px;
     left: 15px;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-100%); /* Initially hidden off the screen */
+    visibility: hidden; /* Hidden from interaction until the animation starts */
+    transition: opacity 0.5s ease, transform 0.5s ease;
     width: 45%;
-    z-index: 1000;
-    display: none;
     backdrop-filter: blur(12.5px);
+    z-index: 1;
     border-radius: 10px;
     border: 1px solid #00000025;
-    transition: .3s;
 }
+
+.sidebar.active {
+    opacity: 1;
+    transform: translateX(0); /* Move to the visible position */
+    visibility: visible;
+  }
 
 .sidebar a {
     padding: 10px 15px;
@@ -547,29 +555,3 @@ body{
       background-color: #00f2fe;
     }
   }
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0; 
-        display: none;
-    }
-    100% {
-        opacity: 1;
-        display: block;
-        z-index: 1000;
-    }
-  }
-
-@keyframes fadeOut {
-    0% { 
-        opacity: 1; 
-        display: block;
-    }
-    100% { 
-        opacity: 0; 
-        display: none;
-        z-index: 0;
-    }
-  }
-
-    
