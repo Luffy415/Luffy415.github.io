@@ -4,7 +4,27 @@ const image = document.querySelector('.image');
 const hover = document.querySelector('.hover');
 const modal = document.querySelector('.modal');
 const close = document.querySelector('.close');
-let chk = false
+let chek = false
+const sidebar = document.querySelector('#sidebar');
+
+document.querySelector('#hamburger').addEventListener('click', toggle)
+document.querySelector('#sidebar').addEventListener('click', toggle)
+
+function toggle(){
+  if (chek == false) {
+    chek = true;
+    // Show the sidebar using GSAP animation
+    gsap.to(sidebar, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" });
+    sidebar.style.visibility = 'visible'; // Ensure the sidebar is interactive
+  } else {
+    chek = false;
+    // Hide the sidebar using GSAP animation
+    gsap.to(sidebar, { opacity: 0, x: -100, duration: 0.5, ease: "power2.in" });
+    setTimeout(() => {
+      sidebar.style.visibility = 'hidden'; // Hide the sidebar after animation completes
+    }, 500); // Wait for the animation to finish before setting visibility to hidden
+  }
+}
 
 gsap.to("#preloader", {
     opacity: 0,
@@ -38,19 +58,6 @@ function hide() {
 image.addEventListener('click', show);
 close.addEventListener('click', hide);
 
-var chkbtn = document.getElementById("chkbtn");
-const sidebar = document.getElementById('sidebar');
-
-function toogle() {
-     if (!chk) {
-     	chk = true
-          sidebar.style.display = 'block'
-          sidebar.style.animation = 'fadeIn 0.25s linear'
-     } else {
-     	 chk = false
-          sidebar.style.animation = 'fadeOut 0.25s linear forwards'
-     }
-}
 const phrases = [
   'shaurya'
 ]
