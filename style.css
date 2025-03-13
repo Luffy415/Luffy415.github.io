@@ -23,7 +23,8 @@ body{
 }
 
 .card{
-	overflow: hidden;
+    overflow: hidden;
+    position: relative;
     width: 400px;
     background-color: #fff;
     border-radius: 5px;
@@ -68,7 +69,7 @@ body{
 
 .hamburger-menu{
     position: absolute;
-    width: 11px;
+    width: 20px;
     height: 16px;
     top: 1.4rem;
     left: 1.9rem;
@@ -263,7 +264,7 @@ body{
     color: #c4c4c4;
     font-size: 1.5rem;
     text-decoration: none;
-    margin-right: 8px;
+    margin-right: 0.5rem;
     transition: .3s;
 }
 
