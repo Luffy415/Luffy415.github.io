@@ -43,6 +43,8 @@ async function cfSubmitMessage() {
       email: GEBID("email").value.toLowerCase(),
       message: GEBID("message").value,
     };
+    console.log(cfvalue);
+    
     let emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     
     if (cfvalue.name === "" || cfvalue.email === ""   || cfvalue.message === "") {
@@ -59,13 +61,16 @@ async function cfSubmitMessage() {
         try {
         var sendmessage = await (
             await fetch(
-            'https://conform.ukqqdzfj.workers.dev/',
+            'https://cf-worker.shauryachandrakar26.workers.dev/',
             {
                 method: "POST",
                 body: JSON.stringify(cfvalue),
             }
             )
         ).json();
+
+        console.log(sendmessage);
+        
 
         if (sendmessage.status) {
             GEBID("submit").innerHTML = "Sent!";
