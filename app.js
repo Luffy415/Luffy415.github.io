@@ -10,6 +10,14 @@ const sidebar = document.querySelector('#sidebar');
 document.querySelector('#hamburger').addEventListener('click', toggle)
 document.querySelector('#sidebar').addEventListener('click', toggle)
 
+document.querySelector('.tdnn').addEventListener('click', tdnn)
+
+function tdnn() {
+  document.getElementsByClassName("moon")[0].classList.toggle("sun");
+  document.getElementsByClassName("tdnn")[0].classList.toggle("day");
+  document.getElementsByTagName("BODY")[0].classList.toggle("light");
+}
+
 function toggle(){
   if (chek == false) {
     chek = true;
@@ -36,14 +44,6 @@ gsap.to("#preloader", {
         document.getElementById('preloader').style.display = 'none';
     }
 });
-
-if (window.innerWidth > 1024){
-  console.log("laptop");
-  
-  window.addEventListener("load", (event) => {
-    new cursoreffects.followingDotCursor({color: ["#A3B9D1"]});
-  });
-}
 
 function show() {
      hover.classList.add('active');
